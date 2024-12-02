@@ -1,1 +1,164 @@
+\documentclass{article}[12pt]
+\usepackage[utf8]{vietnam}
+\usepackage[top=2cm, bottom=2cm, left=2cm,right=2cm]{geometry}
+\usepackage{avant}
+\usepackage{titleps}
+%\usepackage{indentfirst} %indent the first paragraph right below section
+\usepackage{subcaption}
+\usepackage{array, lipsum, bibentry,fancyhdr}
+\setlength{\parindent}{0pt}
+\usepackage{enumitem}
+\usepackage[noframe]{showframe}
+\usepackage{framed}
+\usepackage{titling}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{authblk}
+\usepackage{sectsty}
+\usepackage{eqparbox}
+\usepackage{ulem}
+\usepackage{graphicx}
+\renewcommand{\baselinestretch}{1.5} %increase line spacing
+\usepackage[most]{tcolorbox}
+\usepackage[]{mdframed}
+
+
+%%%%%%%%%% URL and hyperef setting %%%%%%%%%%
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{natbib}
+%\hypersetup{
+%	colorlinks=black,
+%	linkcolor=blue,
+%	filecolor=blue,      
+%	urlcolor=blue,
+%   citecolor=blue,
+%	pdftitle={Overleaf Example},
+%	pdfpagemode=FullScreen,
+%}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=red,      
+    citecolor={blue},
+    urlcolor=red,
+    pdftitle={Overleaf Version},
+    pdfpagemode=FullScreen,
+    }
+\colorlet{linkequation}{blue}
+\newcommand*{\SavedEqref}{}
+\let\SavedEqref\eqref
+\renewcommand*{\eqref}[1]{%
+  \begingroup
+    \hypersetup{
+      linkcolor=linkequation,
+      linkbordercolor=linkequation,
+    }%
+    \SavedEqref{#1}%
+  \endgroup
+}
+
+%%%%%%%%%% Header & Footer %%%%%%%%%%%%%
+\setlength{\headheight}{10mm}
+\RequirePackage{fancyhdr}  % Needed to define custom headers/footers
+\RequirePackage{lastpage}  % Number of pages in the document
+\pagestyle{fancy}          % Enables the custom headers/footers
+% Headers
+\lhead{date}
+\chead{author}%
+\rhead{{Short title here} --- \thepage/\pageref{LastPage}}
+% Footers
+\lfoot{}%
+\cfoot{}%
+\rfoot{}%
+\renewcommand{\headrulewidth}{1pt}% % header rule
+\renewcommand{\footrulewidth}{1pt}% % footer rule
+
+%%%%%%%%%% Insert R code in LaTeX %%%%%%%%%%
+\usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+%%%%%%%%%% Math %%%%%%%%%%%%%
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{siunitx} % unit
+
+%%%%%%%%%% Color setup %%%%%%%%%%%%%
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\usepackage{wrapfig}
+
+\RequirePackage{xcolor}
+\definecolor{wsdred}{HTML}{8E1728}
+\definecolor{wsdgrey}{HTML}{75787B}
+\definecolor{battleshipgrey}{rgb}{0.52, 0.52, 0.51}
+\colorlet{ColorOr}{white}
+
+%%%%%%%%%% Main %%%%%%%%%%%%%
+\title{\huge Title here!}
+\author{name}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\cleardoublepage
+
+%% Contents %%
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\tableofcontents % Tạo mục lục tự động
+\thispagestyle{empty}
+\cleardoublepage
+
+%% Colorbox %%
+
+\begin{tcolorbox}[breakable, enhanced, colback=white, colframe=CadetBlue]
+
+%% Main %%
+
+\input{section-1}
+\cleardoublepage
+
+\input{section-2}
+\cleardoublepage
+
+\end{tcolorbox}
+\cleardoublepage
+
+%% Reference %%
+\bibliographystyle{plain}
+\begin{thebibliography}{}
+%\bibitem{refId0} P. Desgrolard, M. Giffon, E. Martynov, and E. Predazzi. Exchange-degenerate regge trajectories: A fresh look from resonance and forward scattering regions. \textit{Eur. Phys. J. C}, 18(3):555–561, 2001.
+%\bibitem{LondonMathematical} \textit{Proceedings of the London Mathematical Society 2.1 (1918): 75-115.}
+%\bibitem{hadrons} \textit{Melting hadrons, boiling quarks: from Hagedorn temperature to ultra-relativistic heavy-ion collisions at CERN: with a tribute to Rolf Hagedorn. Springer Nature; 2016.}
+\end{thebibliography}
+\cleardoublepage
+
+\end{document}
 
