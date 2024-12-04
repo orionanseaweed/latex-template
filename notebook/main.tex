@@ -1,12 +1,25 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Default Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass{article}[12pt]
 \usepackage[utf8]{vietnam}
 \usepackage[top=2cm, bottom=2cm, left=2cm,right=2cm]{geometry}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Layout Adjustment %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{indentfirst} % indent the first paragraph right below section
+\setlength{\parindent}{0pt} % indent length
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Other Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{avant}
 \usepackage{titleps}
-%\usepackage{indentfirst} %indent the first paragraph right below section
 \usepackage{subcaption}
 \usepackage{array, lipsum, bibentry,fancyhdr}
-\setlength{\parindent}{0pt}
 \usepackage{enumitem}
 \usepackage[noframe]{showframe}
 \usepackage{framed}
@@ -23,19 +36,12 @@
 \usepackage[]{mdframed}
 
 
-%%%%%%%%%% URL and hyperef setting %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% URL and Hyperef Setting %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{url}
 \usepackage{hyperref}
 \usepackage{natbib}
-%\hypersetup{
-%	colorlinks=black,
-%	linkcolor=blue,
-%	filecolor=blue,      
-%	urlcolor=blue,
-%   citecolor=blue,
-%	pdftitle={Overleaf Example},
-%	pdfpagemode=FullScreen,
-%}
 
 \hypersetup{
     colorlinks=true,
@@ -43,9 +49,10 @@
     filecolor=red,      
     citecolor={blue},
     urlcolor=red,
-    pdftitle={Overleaf Version},
-    pdfpagemode=FullScreen,
+    pdftitle={type-name-here},
+    pdfpagemode=FullScreen, % actually I think it's not necessary much to using for a notebook
     }
+    
 \colorlet{linkequation}{blue}
 \newcommand*{\SavedEqref}{}
 \let\SavedEqref\eqref
@@ -59,23 +66,31 @@
   \endgroup
 }
 
-%%%%%%%%%% Header & Footer %%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Header and Footer %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlength{\headheight}{10mm}
 \RequirePackage{fancyhdr}  % Needed to define custom headers/footers
 \RequirePackage{lastpage}  % Number of pages in the document
 \pagestyle{fancy}          % Enables the custom headers/footers
+
 % Headers
 \lhead{date}
 \chead{author}%
 \rhead{{Short title here} --- \thepage/\pageref{LastPage}}
 % Footers
+
 \lfoot{}%
 \cfoot{}%
 \rfoot{}%
 \renewcommand{\headrulewidth}{1pt}% % header rule
 \renewcommand{\footrulewidth}{1pt}% % footer rule
 
-%%%%%%%%%% Insert R code in LaTeX %%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Insert R code in LaTeX %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{listings}
 \usepackage[dvipsnames]{xcolor}
 
@@ -104,12 +119,21 @@
 }
 \lstset{style=mystyle}
 
-%%%%%%%%%% Math %%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Math / Chem / Phys %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{mathtools}
 \usepackage{amsmath}
 \usepackage{siunitx} % unit
+\usepackage{chemformula} % for chemical fomulas \ch{}
+\usepackage{mathtools}
+\usepackage[italicdiff]{physics}
 
-%%%%%%%%%% Color setup %%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Color Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[dvipsnames]{xcolor}
 \usepackage{tcolorbox}
 \usepackage{wrapfig}
@@ -120,7 +144,10 @@
 \definecolor{battleshipgrey}{rgb}{0.52, 0.52, 0.51}
 \colorlet{ColorOr}{white}
 
-%%%%%%%%%% Main %%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Main %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{\huge Title here!}
 \author{name}
 
@@ -130,33 +157,29 @@
 \thispagestyle{empty}
 \cleardoublepage
 
-%% Contents %%
+%%%%% Table of Contents %%%%%%%%%%%%%%%%%%%%%%%%%%
 \addtocontents{toc}{\protect\thispagestyle{empty}}
 \tableofcontents % Tạo mục lục tự động
 \thispagestyle{empty}
 \cleardoublepage
 
-%% Colorbox %%
+%%%%% Color Box %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{tcolorbox}[breakable, enhanced, colback=white, colframe=CadetBlue]
 
-%% Main %%
+%%%%% Main %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{section-1}
-\cleardoublepage
-
-\input{section-2}
+\input{section-1.tex}
 \cleardoublepage
 
 \end{tcolorbox}
 \cleardoublepage
 
-%% Reference %%
+%%%%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \bibliographystyle{plain}
+
 \begin{thebibliography}{}
 %\bibitem{refId0} P. Desgrolard, M. Giffon, E. Martynov, and E. Predazzi. Exchange-degenerate regge trajectories: A fresh look from resonance and forward scattering regions. \textit{Eur. Phys. J. C}, 18(3):555–561, 2001.
-%\bibitem{LondonMathematical} \textit{Proceedings of the London Mathematical Society 2.1 (1918): 75-115.}
-%\bibitem{hadrons} \textit{Melting hadrons, boiling quarks: from Hagedorn temperature to ultra-relativistic heavy-ion collisions at CERN: with a tribute to Rolf Hagedorn. Springer Nature; 2016.}
 \end{thebibliography}
 \cleardoublepage
 
