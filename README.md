@@ -1,6 +1,6 @@
 # latex-template
 
-My go-to LaTeX templates used throughout my undergraduate years at Hanoi University of Science and Technology, Vietnam.
+My go-to LaTeX templates used throughout undergrad years at Hanoi University of Science and Technology, Vietnam.
 
 This repository includes templates for a thesis, notebook and presentation slides.
 
