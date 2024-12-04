@@ -34,6 +34,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Figure and Table %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{adjustbox} % shrink table with \adjustbox and handling booktabs margins
 \usepackage{graphicx} % Required for inserting images
 \usepackage{caption} % to set caption of figure and table
 % \captionsetup[figure]{labelsep=space,justification=centering}
@@ -101,11 +102,14 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% Mathematics %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Mathematics & Chemistry %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{esint} % various fancy integral symbols
 \usepackage{bm} % bf vector
 \usepackage{siunitx} % SI units package
+\usepackage{chemformula} % for chemical fomulas \ch{}
+\usepackage{mathtools}
+\usepackage[italicdiff]{physics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -122,12 +126,13 @@
 	colorlinks=true,
 	linkcolor=black,
 	filecolor=blue,
-  citecolor=purple,
+  	citecolor=purple,
 	urlcolor=blue,
 	pdftitle={type-name-here},
 	pdfpagemode=FullScreen, % auto full screen while open in PDF, recommend for beamer
 }
 
+\renewcommand*{\bibfont}{\footnotesize} % set font size footnote to bibliography
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Main Text %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
