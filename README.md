@@ -1,4 +1,7 @@
 # latex-template
-My daily used LaTeX templates through my bachelor years in Hanoi University of Science and Technology, Vietnam.
 
-This work including thesis, notebook and presentation slides template, which was inspired by Hirose209 (HUST alumni), amysteriousperson (xPhO) and Log (xPhO).
+My go-to LaTeX templates used throughout my undergraduate years at Hanoi University of Science and Technology, Vietnam.
+
+This repository includes templates for a thesis, notebook, and presentation slides.
+
+I am sincerely honored to mention a few nicknames of individuals who inspired me in creating these templates here: Hirose209 (HUST alumni), amysteriousperson (xPhO), and Log (xPhO).
