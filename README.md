@@ -6,4 +6,4 @@ This repository includes templates for a thesis, notebook and presentation slide
 
 I am sincerely honored to mention a few nicknames of individuals who inspired me in creating these templates:
 
-Hirose209 (HUST alumni), amysteriousperson (xPhO), and Log (xPhO).
+Hirose209 (HUST alumni), amysteriousperson (xPhO) and Log (xPhO).
