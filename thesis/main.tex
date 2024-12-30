@@ -95,7 +95,7 @@
     pdftitle={type-name-here},
     pdfpagemode=FullScreen, % actually I think it's not necessary much to using for a notebook
     linktoc=none,
-    }
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Adjustment %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -104,12 +104,13 @@
 \usepackage{bookmark} % to make table of contents ordered
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% Make caption name follow section number %%%%
+%%%%% Caption format and rename table and figure %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \setcounter{figure}{0}
 \renewcommand{\figurename}{Hình}
 \renewcommand{\thefigure}{\arabic{section}.\arabic{figure}}
+\captionsetup[table]{name=Bảng} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Fit Figures to Page %%%%%%%%%%%%%%%%%%%%%%%%
@@ -117,9 +118,9 @@
 
 \usepackage{adjustbox}
 \newcommand*{\MyIncludeGraphics}[2][]{%
-\begin{adjustbox}{max size={\textwidth}{\textheight}}
-    \includegraphics[#1]{#2}%
-\end{adjustbox}
+    \begin{adjustbox}{max size={\textwidth}{\textheight}}
+        \includegraphics[#1]{#2}%
+    \end{adjustbox}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
