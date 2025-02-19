@@ -4,10 +4,10 @@ My go-to LaTeX templates used throughout undergrad years at Hanoi University of 
 
 This repository includes templates for a thesis, notebook and presentation slides.
 
-I am sincerely honored to mention a few nicknames of individuals who inspired me in creating these templates:
+Special thanks to individuals who inspired me in creating these templates:
 
 Hirose209 (HUST alumni), amysteriousperson (xPhO) and Log (xPhO).
 
 <br />
 
-Authored by Kane - 06/12/2024
+2024-12-06-Kane
