@@ -3,6 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[t]{beamer}
+% \documentclass[aspectratio=169, t]{beamer} % Adjust the Ratio to 16:9
 \usecolortheme{default}
 \usetheme{default}
 
@@ -25,12 +26,34 @@
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Slide BG Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\normalbackground}{%
+    \usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{Background/xxx.pdf}}%
+}
+
+\newcommand{\titlebackground}{%
+    \usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{Background/xxx.pdf}}%
+}
+
+\setbeamercolor{frametitle}{fg=white}  % Change the title color to white
+
+% push the title up by \raisebox
+\setbeamertemplate{frametitle}{%
+    \vspace{0.3em}
+    \hspace{-1em} \insertframetitle
+    \vspace{2mm}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Color Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\definecolor{BlueDefault}{rgb}{0.2,0.2,0.7} % Log's Blue is really beautiful.
+\definecolor{BlueDefault}{rgb}{0.2,0.2,0.7} % Log's
 \definecolor{Fr4}{RGB}{228, 188, 65}
 \definecolor{Copper}{RGB}{184, 115, 51}
+\definecolor{xPhOBlue}{RGB}{14,47,95} % xPhO's
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Figure and Table %%%%%%%%%%%%%%%%%%%%%%%%%%%
