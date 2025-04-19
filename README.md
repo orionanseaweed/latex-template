@@ -10,4 +10,4 @@ Hirose209 (HUST alumni), amysteriousperson (xPhO) and Log (xPhO).
 
 <br />
 
-2024 © Kane
+2024 © Xuan Tung Hoang
