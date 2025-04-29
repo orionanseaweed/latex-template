@@ -4,30 +4,47 @@
 
 \documentclass[t]{beamer}
 % \documentclass[aspectratio=169, t]{beamer} % adjust the Ratio to 16:9
+\usepackage[utf8]{vietnam} % to write in Vietnamese
+
 \usecolortheme{default}
 \usetheme{default}
-
-\usepackage[utf8]{vietnam} % to write in Vietnamese
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Math / Chem / Phys %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\usepackage{mathtools}
+\usepackage{amsmath}
 \usepackage{esint} % various fancy integral symbols
 \usepackage{bm} % bf vector
 \usepackage{siunitx} % SI units package
 \usepackage{chemformula} % for chemical fomulas \ch{}
-\usepackage{mathtools}
 \usepackage[italicdiff]{physics}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Color Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\definecolor{BlueDefault}{rgb}{0.2,0.2,0.7} % Log's
+\definecolor{BlueDefault}{rgb}{0.2,0.2,0.7} % Log's Blue.
 \definecolor{Fr4}{RGB}{228, 188, 65}
 \definecolor{Copper}{RGB}{184, 115, 51}
-\definecolor{xPhOBlue}{RGB}{14,47,95} % xPhO's
+\definecolor{xPhOBlue}{RGB}{14,47,95} % xPhO's Blue.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% URL and Hyperef setting %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks = true,
+	linkcolor = black,
+	filecolor = blue,
+  	citecolor = purple,
+	urlcolor = BlueDefault,
+	pdftitle = {presentation},
+	pdfpagemode = FullScreen,
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Slide Background Setup %%%%%%%%%%%%%%%%%%%%%
@@ -137,19 +154,6 @@
 
 \usepackage[backend=biber,style=ieee]{biblatex}
 \addbibresource{references.bib}
-
-\usepackage{url}
-\usepackage{hyperref}
-\hypersetup{
-	colorlinks=true,
-	linkcolor=black,
-	filecolor=blue,
-  	citecolor=purple,
-	urlcolor=blue,
-	pdftitle={type-name-here},
-	pdfpagemode=FullScreen, % auto full screen while open in PDF, recommend for beamer
-}
-
 \renewcommand*{\bibfont}{\footnotesize} % set font size footnote to bibliography
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
