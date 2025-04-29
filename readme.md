@@ -2,7 +2,7 @@
 
 My go-to LaTeX templates used throughout undergrad years at Hanoi University of Science and Technology, Vietnam.
 
-This repository includes templates for a thesis, notebook, presentation slide, and lecture note.
+This repository includes templates for the thesis, notebook, presentation slide, and lecture note.
 
 Special thanks to individuals who inspired me in creating these templates:
 
