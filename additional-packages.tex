@@ -1,0 +1,93 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% DNA Seq Package %%%%%%%%%%%%%%%%%%%%%%%%%%%% % https://tex.stackexchange.com/questions/723487/modification-for-use-of-dnaseq-package
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{dnaseq}                       
+
+\renewcommand{\ttdefault}{lmtt}                   % for distinctive boldface
+
+\makeatletter
+
+%%% remove the awkward definition of `\struty`
+\def\DNA#1{%
+   \def\@DNA@end{#1}\bgroup\ttfamily\DNAc@lcline
+   %% dnabase per line counter
+   \count@=0
+   %% block counter
+   \@tempcnta=0
+   %% total dnabase counter
+   \@tempcntb=0
+   \fboxrule=0pt \fboxsep=0pt
+   \noindent\phantom{\DNAreserve}\llap{1}\ %
+   \@DNA
+}
+%%% a better strut
+\def\DNA@strut{%
+  \vrule height \dimeval{\fontcharht\font`I+2pt} depth 1pt width 0pt
+}
+
+%%% fix Steven's code
+\def\@DNA#1{%
+    %% insert a space after \DNAblock bases
+    \ifnum\count@=\DNAblock\count@=0\ %
+    \advance\@tempcnta by 1\fi
+    \def\@DNA@cmp{#1}%
+    %% check for end of sequence or color shift
+    \ifx\@DNA@cmp\@DNA@end
+    \let\next\egroup
+    \else
+    \ifx\@DNA@cmp\@DNA@color
+    \let\next\@DNA@setcolor
+    \else
+    \advance\count@ by 1
+    \advance\@tempcntb by 1
+    %% line break after calculated number of blocks
+    \ifnum\@tempcnta=\blocks \\
+    \hskip\z@\phantom{\DNAreserve}\llap{\the\@tempcntb}\ %
+    \@tempcnta=0
+    \fi
+    \makebox[0.5em]{\@DNA@thecolor{\DNA@strut#1}}% <--- here the changes
+    \penalty0\let\next\@DNA
+    \fi
+    \fi
+    \next
+}
+\makeatother
+
+% how to use: 
+% 
+% \DNA!
+%     '{} ATGCATCG...
+% !
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Insert R code in LaTeX %%%%%%%%%%%%%%%%%%%%% % https://tex.stackexchange.com/questions/374001/insert-r-code-in-latex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
