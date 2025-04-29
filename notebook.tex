@@ -7,6 +7,17 @@
 \usepackage[top=2cm, bottom=2cm, left=2cm,right=2cm]{geometry}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Math / Chem / Phys %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{siunitx} % unit
+\usepackage{chemformula} % for chemical fomulas \ch{}
+\usepackage{mathtools}
+\usepackage[italicdiff]{physics}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Layout Adjustment %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -14,68 +25,66 @@
 \setlength{\parindent}{0pt} % indent length
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% DNA Seq Package %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Color Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{dnaseq}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\usepackage{wrapfig}
 
-% https://tex.stackexchange.com/questions/723487/modification-for-use-of-dnaseq-package
+\RequirePackage{xcolor}
+\definecolor{BlueDefault}{rgb}{0.2,0.2,0.7} % Log's Blue.
 
-\renewcommand{\ttdefault}{lmtt} % for distinctive boldface
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% URL and Hyperef setting %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\makeatletter
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{natbib}
 
-% remove the awkward definition of `\struty`
-\def\DNA#1{%
-   \def\@DNA@end{#1}\bgroup\ttfamily\DNAc@lcline
-   %% dnabase per line counter
-   \count@=0
-   %% block counter
-   \@tempcnta=0
-   %% total dnabase counter
-   \@tempcntb=0
-   \fboxrule=0pt \fboxsep=0pt
-   \noindent\phantom{\DNAreserve}\llap{1}\ %
-   \@DNA
+\hypersetup{
+    colorlinks = true,
+    linkcolor = black,
+    filecolor = red,      
+    citecolor = BlueDefault,
+    urlcolor = BlueDefault,
+    pdftitle = {notebook},
 }
-% a better strut
-\def\DNA@strut{%
-  \vrule height \dimeval{\fontcharht\font`I+2pt} depth 1pt width 0pt
+    
+\colorlet{linkequation}{blue}
+\newcommand*{\SavedEqref}{}
+\let\SavedEqref\eqref
+\renewcommand*{\eqref}[1]{%
+  \begingroup
+    \hypersetup{
+      linkcolor=linkequation,
+      linkbordercolor=linkequation,
+    }%
+    \SavedEqref{#1}%
+  \endgroup
 }
 
-% fix Steven's code
-\def\@DNA#1{%
-    %% insert a space after \DNAblock bases
-    \ifnum\count@=\DNAblock\count@=0\ %
-    \advance\@tempcnta by 1\fi
-    \def\@DNA@cmp{#1}%
-    %% check for end of sequence or color shift
-    \ifx\@DNA@cmp\@DNA@end
-    \let\next\egroup
-    \else
-    \ifx\@DNA@cmp\@DNA@color
-    \let\next\@DNA@setcolor
-    \else
-    \advance\count@ by 1
-    \advance\@tempcntb by 1
-    %% line break after calculated number of blocks
-    \ifnum\@tempcnta=\blocks \\
-    \hskip\z@\phantom{\DNAreserve}\llap{\the\@tempcntb}\ %
-    \@tempcnta=0
-    \fi
-    \makebox[0.5em]{\@DNA@thecolor{\DNA@strut#1}}% <--- here the changes
-    \penalty0\let\next\@DNA
-    \fi
-    \fi
-    \next
-}
-\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Header and Footer %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% how to use: 
-% 
-% \DNA!
-%     '{} ATGCATCG...
-% !
+\setlength{\headheight}{10mm}
+\RequirePackage{fancyhdr}         % Needed to define custom headers/footers
+\RequirePackage{lastpage}         % Number of pages in the document
+\pagestyle{fancy}                 % Enables the custom headers/footers
+
+% Headers
+\lhead{date}
+\chead{author}%
+\rhead{{Short title here} --- \thepage/\pageref{LastPage}}
+% Footers
+
+\lfoot{}%
+\cfoot{}%
+\rfoot{}%
+\renewcommand{\headrulewidth}{1pt}% % header rule
+\renewcommand{\footrulewidth}{1pt}% % footer rule
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Other Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -103,58 +112,6 @@
 \usepackage{seqsplit} % split long lines
 \usepackage{fancyvrb}
 \usepackage{tabu}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% URL and Hyperef setting %%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\usepackage{url}
-\usepackage{hyperref}
-\usepackage{natbib}
-
-\hypersetup{
-    colorlinks=true,
-    linkcolor=black,
-    filecolor=red,      
-    citecolor={blue},
-    urlcolor=red,
-    pdftitle={type-name-here},
-    pdfpagemode=FullScreen, % actually I think it's not necessary much to using for a notebook
-    }
-    
-\colorlet{linkequation}{blue}
-\newcommand*{\SavedEqref}{}
-\let\SavedEqref\eqref
-\renewcommand*{\eqref}[1]{%
-  \begingroup
-    \hypersetup{
-      linkcolor=linkequation,
-      linkbordercolor=linkequation,
-    }%
-    \SavedEqref{#1}%
-  \endgroup
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% Header and Footer %%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\setlength{\headheight}{10mm}
-\RequirePackage{fancyhdr}  % Needed to define custom headers/footers
-\RequirePackage{lastpage}  % Number of pages in the document
-\pagestyle{fancy}          % Enables the custom headers/footers
-
-% Headers
-\lhead{date}
-\chead{author}%
-\rhead{{Short title here} --- \thepage/\pageref{LastPage}}
-% Footers
-
-\lfoot{}%
-\cfoot{}%
-\rfoot{}%
-\renewcommand{\headrulewidth}{1pt}% % header rule
-\renewcommand{\footrulewidth}{1pt}% % footer rule
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Insert R code in LaTeX %%%%%%%%%%%%%%%%%%%%%
@@ -189,33 +146,68 @@
 \lstset{style=mystyle}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% Math / Chem / Phys %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% DNA Seq Package %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{mathtools}
-\usepackage{amsmath}
-\usepackage{siunitx} % unit
-\usepackage{chemformula} % for chemical fomulas \ch{}
-\usepackage{mathtools}
-\usepackage[italicdiff]{physics}
+% \usepackage{dnaseq}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% Color Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % https://tex.stackexchange.com/questions/723487/modification-for-use-of-dnaseq-package
 
-\usepackage[dvipsnames]{xcolor}
-\usepackage{tcolorbox}
-\usepackage{wrapfig}
+% \renewcommand{\ttdefault}{lmtt} % for distinctive boldface
 
-\RequirePackage{xcolor}
-\definecolor{wsdred}{HTML}{8E1728}
-\definecolor{wsdgrey}{HTML}{75787B}
-\definecolor{battleshipgrey}{rgb}{0.52, 0.52, 0.51}
-\colorlet{ColorOr}{white}
+% \makeatletter
 
-\definecolor{BlueDefault}{rgb}{0.2,0.2,0.7} % Log's Blue is really beautiful.
-\definecolor{Fr4}{RGB}{228, 188, 65}
-\definecolor{Copper}{RGB}{184, 115, 51}
+% % remove the awkward definition of `\struty`
+% \def\DNA#1{%
+%    \def\@DNA@end{#1}\bgroup\ttfamily\DNAc@lcline
+%    %% dnabase per line counter
+%    \count@=0
+%    %% block counter
+%    \@tempcnta=0
+%    %% total dnabase counter
+%    \@tempcntb=0
+%    \fboxrule=0pt \fboxsep=0pt
+%    \noindent\phantom{\DNAreserve}\llap{1}\ %
+%    \@DNA
+% }
+% % a better strut
+% \def\DNA@strut{%
+%   \vrule height \dimeval{\fontcharht\font`I+2pt} depth 1pt width 0pt
+% }
+
+% % fix Steven's code
+% \def\@DNA#1{%
+%     %% insert a space after \DNAblock bases
+%     \ifnum\count@=\DNAblock\count@=0\ %
+%     \advance\@tempcnta by 1\fi
+%     \def\@DNA@cmp{#1}%
+%     %% check for end of sequence or color shift
+%     \ifx\@DNA@cmp\@DNA@end
+%     \let\next\egroup
+%     \else
+%     \ifx\@DNA@cmp\@DNA@color
+%     \let\next\@DNA@setcolor
+%     \else
+%     \advance\count@ by 1
+%     \advance\@tempcntb by 1
+%     %% line break after calculated number of blocks
+%     \ifnum\@tempcnta=\blocks \\
+%     \hskip\z@\phantom{\DNAreserve}\llap{\the\@tempcntb}\ %
+%     \@tempcnta=0
+%     \fi
+%     \makebox[0.5em]{\@DNA@thecolor{\DNA@strut#1}}% <--- here the changes
+%     \penalty0\let\next\@DNA
+%     \fi
+%     \fi
+%     \next
+% }
+% \makeatother
+
+% how to use: 
+
+% \DNA!
+%     '{} ATGCATCG...
+% !
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Begin Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -240,17 +232,14 @@
 \cleardoublepage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% Color Box %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Main Contents %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{tcolorbox}[breakable, enhanced, colback=white, colframe=CadetBlue]
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% Main Contents %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\input{section-1.tex}
-\cleardoublepage
+\section{insert-name-here}
+\setcounter{section}{1}
+\setcounter{subsection}{0}
 
 \end{tcolorbox}
 \cleardoublepage
