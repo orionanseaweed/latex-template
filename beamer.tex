@@ -2,9 +2,8 @@
 %%%%% Default Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[t]{beamer}
-% \documentclass[aspectratio=169, t]{beamer} % adjust the Ratio to 16:9
-\usepackage[utf8]{vietnam} % to write in Vietnamese
+\documentclass[t]{beamer}			  									% \documentclass[aspectratio=169, t]{beamer} % to adjust the ratio to 16:9
+\usepackage[utf8]{vietnam}			  								% to write in Vietnamese
 
 \usecolortheme{default}
 \usetheme{default}
@@ -15,20 +14,18 @@
 
 \usepackage{mathtools}
 \usepackage{amsmath}
-\usepackage{esint} % various fancy integral symbols
-\usepackage{bm} % bf vector
-\usepackage{siunitx} % SI units package
-\usepackage{chemformula} % for chemical fomulas \ch{}
+\usepackage{esint} 																 % various fancy integral symbols
+\usepackage{bm} 																	 % bf vector
+\usepackage{siunitx}                               % SI unit
+\usepackage{chemformula}                           % for chemical fomulas \ch{}
 \usepackage[italicdiff]{physics}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Color Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\definecolor{BlueDefault}{rgb}{0.2,0.2,0.7} % Log's Blue.
-\definecolor{Fr4}{RGB}{228, 188, 65}
-\definecolor{Copper}{RGB}{184, 115, 51}
-\definecolor{xPhOBlue}{RGB}{14,47,95} % xPhO's Blue.
+\definecolor{BlueDefault}{rgb}{0.2,0.2,0.7} 			% Log's Blue.
+\definecolor{xPhOBlue}{RGB}{14,47,95} 						% xPhO's Blue.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% URL and Hyperef setting %%%%%%%%%%%%%%%%%%%%
@@ -36,11 +33,12 @@
 
 \usepackage{url}
 \usepackage{hyperref}
+
 \hypersetup{
 	colorlinks = true,
 	linkcolor = black,
 	filecolor = blue,
-  	citecolor = purple,
+  citecolor = purple,
 	urlcolor = BlueDefault,
 	pdftitle = {presentation},
 	pdfpagemode = FullScreen,
@@ -58,7 +56,7 @@
     \usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{background/xxx.pdf}}%
 }
 
-\setbeamercolor{frametitle}{fg=white}  % Change the title color to white
+\setbeamercolor{frametitle}{fg=white}  						% Change the title color to white
 
 % push the title up by \raisebox
 \setbeamertemplate{frametitle}{%
@@ -71,12 +69,12 @@
 %%%%% Figure and Table %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{adjustbox} % shrink table with \adjustbox and handling booktabs margins
-\usepackage{graphicx} % Required for inserting images
-\usepackage{caption} % to set caption of figure and table
+\usepackage{adjustbox} 														% shrink table with \adjustbox and handling booktabs margins
+\usepackage{graphicx} 														% required for inserting images
+\usepackage{caption} 															% to set caption of figure and table
 % \captionsetup[figure]{labelsep=space,justification=centering}
 % \captionsetup[table]{labelsep=space,justification=centering}
-% \usepackage{minipage} % adjust column, row and minipage
+% \usepackage{minipage} 													% adjust column, row and minipage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% General Information %%%%%%%%%%%%%%%%%%%%%%%%
@@ -86,7 +84,6 @@
 \author{Kane}
 \institute{School of Chemistry and Life Sciences - Hanoi University of Science and Technology}
 \date{\today}
-\date{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Table of Contents %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -110,13 +107,13 @@
 %%%%% Headline & Footline %%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\setbeamertemplate{footline}[page number] % create page number
+\setbeamertemplate{footline}[page number] 				% create page number
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Custom Headline %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\setbeamertemplate{headline} % custom headline
+\setbeamertemplate{headline} 											% custom headline
 {
     \begin{beamercolorbox}{section in head/foot}
     % \vskip2pt\insertnavigation{\paperwidth}\vskip2pt
@@ -154,22 +151,22 @@
 
 \usepackage[backend=biber,style=ieee]{biblatex}
 \addbibresource{references.bib}
-\renewcommand*{\bibfont}{\footnotesize} % set font size footnote to bibliography
+\renewcommand*{\bibfont}{\footnotesize} 					% set font size footnote to bibliography
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% TikZ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{pgfplots} %%%%%% Regression %%%%
+\usepackage{pgfplots} 														% regression
 \pgfplotsset{compat = newest}
 \usepackage{pgfplotstable}
 \usepackage{tikz}
-\usepackage{tikz-3dplot} %%%%%% Draw %%%%%%
+\usepackage{tikz-3dplot} 													% draw
 \usepackage{tikz,tkz-euclide}
 \usetikzlibrary{arrows,calc,patterns}
 \usetikzlibrary{quotes,angles}
 \usetikzlibrary{shapes.geometric}
-\usepackage{circuitikz} %%%%% Circuit %%%%
+\usepackage{circuitikz} 													% circuit
 \usetikzlibrary{decorations.pathmorphing,patterns}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
