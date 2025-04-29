@@ -12,18 +12,18 @@
 
 \usepackage{mathtools}
 \usepackage{amsmath}
-\usepackage{esint} % various fancy integral symbols
-\usepackage{bm} % bf vector
-\usepackage{siunitx} % unit
-\usepackage{chemformula} % for chemical fomulas \ch{}
+\usepackage{esint}                                % various fancy integral symbols
+\usepackage{bm}                                   % bf vector
+\usepackage{siunitx}                              % SI unit
+\usepackage{chemformula}                          % for chemical fomulas \ch{}
 \usepackage[italicdiff]{physics}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Layout Adjustment %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{indentfirst} % indent the first paragraph right below section
-\setlength{\parindent}{0pt} % indent length
+\usepackage{indentfirst}                          % indent the first paragraph right below section
+\setlength{\parindent}{0pt}                       % indent length
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Color Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -34,7 +34,7 @@
 \usepackage{wrapfig}
 
 \RequirePackage{xcolor}
-\definecolor{BlueDefault}{rgb}{0.2,0.2,0.7} % Log's Blue.
+\definecolor{BlueDefault}{rgb}{0.2,0.2,0.7}       % Log's Blue.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% URL and Hyperef setting %%%%%%%%%%%%%%%%%%%%
@@ -71,9 +71,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \setlength{\headheight}{10mm}
-\RequirePackage{fancyhdr}         % Needed to define custom headers/footers
-\RequirePackage{lastpage}         % Number of pages in the document
-\pagestyle{fancy}                 % Enables the custom headers/footers
+\RequirePackage{fancyhdr}                         % Needed to define custom headers/footers
+\RequirePackage{lastpage}                         % Number of pages in the document
+\pagestyle{fancy}                                 % Enables the custom headers/footers
 
 % Headers
 \lhead{date}
@@ -84,8 +84,8 @@
 \lfoot{}%
 \cfoot{}%
 \rfoot{}%
-\renewcommand{\headrulewidth}{1pt}% % header rule
-\renewcommand{\footrulewidth}{1pt}% % footer rule
+\renewcommand{\headrulewidth}{1pt}%               % header rule
+\renewcommand{\footrulewidth}{1pt}%               % footer rule
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Other Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -106,13 +106,14 @@
 \usepackage{eqparbox}
 \usepackage{ulem}
 \usepackage{graphicx}
-\renewcommand{\baselinestretch}{1.5} % increase line spacing
+\renewcommand{\baselinestretch}{1.5}              % increase line spacing
 \usepackage[most]{tcolorbox}
 \usepackage[]{mdframed}
-\usepackage{marginnote} % margin note
-\usepackage{seqsplit} % split long lines
+\usepackage{marginnote}                           % margin note
+\usepackage{seqsplit}                             % split long lines
 \usepackage{fancyvrb}
 \usepackage{tabu}
+%\usepackage{dnaseq}                              % https://tex.stackexchange.com/questions/723487/modification-for-use-of-dnaseq-package
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Insert R code in LaTeX %%%%%%%%%%%%%%%%%%%%%
@@ -147,70 +148,6 @@
 \lstset{style=mystyle}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% DNA Seq Package %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \usepackage{dnaseq}
-
-% % https://tex.stackexchange.com/questions/723487/modification-for-use-of-dnaseq-package
-
-% \renewcommand{\ttdefault}{lmtt} % for distinctive boldface
-
-% \makeatletter
-
-% % remove the awkward definition of `\struty`
-% \def\DNA#1{%
-%    \def\@DNA@end{#1}\bgroup\ttfamily\DNAc@lcline
-%    %% dnabase per line counter
-%    \count@=0
-%    %% block counter
-%    \@tempcnta=0
-%    %% total dnabase counter
-%    \@tempcntb=0
-%    \fboxrule=0pt \fboxsep=0pt
-%    \noindent\phantom{\DNAreserve}\llap{1}\ %
-%    \@DNA
-% }
-% % a better strut
-% \def\DNA@strut{%
-%   \vrule height \dimeval{\fontcharht\font`I+2pt} depth 1pt width 0pt
-% }
-
-% % fix Steven's code
-% \def\@DNA#1{%
-%     %% insert a space after \DNAblock bases
-%     \ifnum\count@=\DNAblock\count@=0\ %
-%     \advance\@tempcnta by 1\fi
-%     \def\@DNA@cmp{#1}%
-%     %% check for end of sequence or color shift
-%     \ifx\@DNA@cmp\@DNA@end
-%     \let\next\egroup
-%     \else
-%     \ifx\@DNA@cmp\@DNA@color
-%     \let\next\@DNA@setcolor
-%     \else
-%     \advance\count@ by 1
-%     \advance\@tempcntb by 1
-%     %% line break after calculated number of blocks
-%     \ifnum\@tempcnta=\blocks \\
-%     \hskip\z@\phantom{\DNAreserve}\llap{\the\@tempcntb}\ %
-%     \@tempcnta=0
-%     \fi
-%     \makebox[0.5em]{\@DNA@thecolor{\DNA@strut#1}}% <--- here the changes
-%     \penalty0\let\next\@DNA
-%     \fi
-%     \fi
-%     \next
-% }
-% \makeatother
-
-% how to use: 
-
-% \DNA!
-%     '{} ATGCATCG...
-% !
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Begin Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -228,7 +165,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \addtocontents{toc}{\protect\thispagestyle{empty}}
-\tableofcontents % Tạo mục lục tự động
+\tableofcontents                                  % automatically create table of content
 \thispagestyle{empty}
 \cleardoublepage
 
@@ -260,4 +197,6 @@
 
 \end{document}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
