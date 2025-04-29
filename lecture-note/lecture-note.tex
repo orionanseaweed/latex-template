@@ -1,0 +1,111 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Default Setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{tufte-handout}
+
+\title{title here
+       \thanks{Course Instructors: your-leturer-name} \\
+       \Large Lecture Notes: lecture-chapter-number \thanks{Authors: your-name-here}}
+
+\date{season year}                                % without \date command, current date is supplied
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% URL and Hyperef setting %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{unsrt}
+\usepackage{hyperref}
+\usepackage{cite}
+
+\hypersetup{
+    colorlinks = true,
+    linkcolor = black,
+    filecolor = red,      
+    citecolor = BlueDefault,
+    urlcolor = BlueDefault,
+    pdftitle = {pdf_title},
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Color Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{BlueDefault}{rgb}{0.2,0.2,0.7}       % Log's Blue.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Math / Chem / Phys %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{chemformula}                          % for chemical fomulas \ch{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Other Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\geometry{showframe}                              % display margins for debugging page layout
+
+\usepackage{graphicx}                             % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{notes2/fig/}}                    % set of paths to search for images
+\usepackage{amsmath}                              % extended mathematics
+\usepackage{amstext}                              % extended text
+\usepackage{booktabs}                             % book-quality tables
+\usepackage{units}                                % non-stacked fractions and better unit spacing
+\usepackage{multicol}                             % multiple column layout facilities
+\usepackage{lipsum}                               % filler text
+\usepackage{fancyvrb}                             % extended verbatim environments
+\usepackage{placeins}
+  \fvset{fontsize=\normalsize}                    % default font size for fancy-verbatim environments
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Standardize command font styles and environments 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}  % command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}  % optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}     % (required) command argument
+\newcommand{\docenv}[1]{\textsf{#1}}              % environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}              % package name
+\newcommand{\doccls}[1]{\texttt{#1}}              % document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}           % document class option name
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}  % command specification environment
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\textunderscript}[1]{$_{\text{#1}}$}
+
+\setcounter{secnumdepth}{3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Begin Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\maketitle
+
+%\printclassoptions
+
+\textbf{Keyphrases/Summary/Index terms/Abstract}
+
+\section{}
+
+\begin{marginfigure}%
+  \includegraphics[width=\linewidth]{.png}
+  \caption{}
+\end{marginfigure}
+
+\begin{table}[ht]
+  \centering
+  \fontfamily{ppl}\selectfont
+  \begin{tabular}{lll}
+    \toprule
+    a & b & c \\
+    \midrule
+    a & b & c \\
+    \bottomrule
+  \end{tabular}
+  \caption{}
+\end{table}
+
+\end{document}
