@@ -10,23 +10,27 @@
 \usepackage[utf8]{vietnam} % to write in Vietnamese
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% TikZ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Math / Chem / Phys %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{pgfplots} %%%%%% Regression %%%%
-\pgfplotsset{compat = newest}
-\usepackage{pgfplotstable}
-\usepackage{tikz}
-\usepackage{tikz-3dplot} %%%%%% Draw %%%%%%
-\usepackage{tikz,tkz-euclide}
-\usetikzlibrary{arrows,calc,patterns}
-\usetikzlibrary{quotes,angles}
-\usetikzlibrary{shapes.geometric}
-\usepackage{circuitikz} %%%%% Circuit %%%%
-\usetikzlibrary{decorations.pathmorphing,patterns}
+\usepackage{esint} % various fancy integral symbols
+\usepackage{bm} % bf vector
+\usepackage{siunitx} % SI units package
+\usepackage{chemformula} % for chemical fomulas \ch{}
+\usepackage{mathtools}
+\usepackage[italicdiff]{physics}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% Slide BG Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Color Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{BlueDefault}{rgb}{0.2,0.2,0.7} % Log's
+\definecolor{Fr4}{RGB}{228, 188, 65}
+\definecolor{Copper}{RGB}{184, 115, 51}
+\definecolor{xPhOBlue}{RGB}{14,47,95} % xPhO's
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Slide Background Setup %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\normalbackground}{%
@@ -45,15 +49,6 @@
     \hspace{-1em} \insertframetitle
     \vspace{2mm}
 }
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% Color Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\definecolor{BlueDefault}{rgb}{0.2,0.2,0.7} % Log's
-\definecolor{Fr4}{RGB}{228, 188, 65}
-\definecolor{Copper}{RGB}{184, 115, 51}
-\definecolor{xPhOBlue}{RGB}{14,47,95} % xPhO's
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Figure and Table %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -137,17 +132,6 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% Math / Chem / Phys %%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\usepackage{esint} % various fancy integral symbols
-\usepackage{bm} % bf vector
-\usepackage{siunitx} % SI units package
-\usepackage{chemformula} % for chemical fomulas \ch{}
-\usepackage{mathtools}
-\usepackage[italicdiff]{physics}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Biblioraphy %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -169,6 +153,22 @@
 \renewcommand*{\bibfont}{\footnotesize} % set font size footnote to bibliography
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% TikZ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{pgfplots} %%%%%% Regression %%%%
+\pgfplotsset{compat = newest}
+\usepackage{pgfplotstable}
+\usepackage{tikz}
+\usepackage{tikz-3dplot} %%%%%% Draw %%%%%%
+\usepackage{tikz,tkz-euclide}
+\usetikzlibrary{arrows,calc,patterns}
+\usetikzlibrary{quotes,angles}
+\usetikzlibrary{shapes.geometric}
+\usepackage{circuitikz} %%%%% Circuit %%%%
+\usetikzlibrary{decorations.pathmorphing,patterns}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Main Text %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -177,7 +177,25 @@
 % \maketitle
 \frame{\titlepage}
 
-\input{sections/section-1.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Section 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{put-name-here}
+
+\subsection{put-name-here}
+
+\begin{frame}{put-name-here}
+
+\begin{columns}
+    
+    \column{0.44\textwidth}
+
+    \column{0.56\textwidth}
+    
+\end{columns}  
+    
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Bibliography Generation %%%%%%%%%%%%%%%%%%%%
