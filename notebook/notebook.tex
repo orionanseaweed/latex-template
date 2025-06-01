@@ -67,27 +67,6 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%% Header and Footer %%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\setlength{\headheight}{10mm}
-\RequirePackage{fancyhdr}                         % Needed to define custom headers/footers
-\RequirePackage{lastpage}                         % Number of pages in the document
-\pagestyle{fancy}                                 % Enables the custom headers/footers
-
-% Headers
-\lhead{date}
-\chead{author}%
-\rhead{{Short title here} --- \thepage/\pageref{LastPage}}
-% Footers
-
-\lfoot{}%
-\cfoot{}%
-\rfoot{}%
-\renewcommand{\headrulewidth}{1pt}%               % header rule
-\renewcommand{\footrulewidth}{1pt}%               % footer rule
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Other Packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -117,6 +96,27 @@
 \usepackage{listings}                             % insert R code, how to use: https://tex.stackexchange.com/questions/374001/insert-r-code-in-latex
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Header and Footer %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\headheight}{10mm}
+\RequirePackage{fancyhdr}                         % Needed to define custom headers/footers
+\RequirePackage{lastpage}                         % Number of pages in the document
+\pagestyle{fancy}                                 % Enables the custom headers/footers
+
+% Headers
+\lhead{date}
+\chead{author}%
+\rhead{{Short title here} --- \thepage/\pageref{LastPage}}
+% Footers
+
+\lfoot{}%
+\cfoot{}%
+\rfoot{}%
+\renewcommand{\headrulewidth}{1pt}%               % header rule
+\renewcommand{\footrulewidth}{1pt}%               % footer rule
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% Begin Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -142,14 +142,14 @@
 %%%%% Main Contents %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{tcolorbox}[breakable, enhanced, colback=white, colframe=CadetBlue]
+% \begin{tcolorbox}[breakable, enhanced, colback=white, colframe=CadetBlue]
 
 \section{insert-name-here}
 \setcounter{section}{1}
 \setcounter{subsection}{0}
 
-\end{tcolorbox}
-\cleardoublepage
+% \end{tcolorbox}
+% \cleardoublepage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
