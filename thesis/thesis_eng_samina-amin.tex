@@ -1,0 +1,137 @@
+\documentclass[12pt]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum} % For generating dummy text
+\usepackage[backend=biber, style=apa, sorting=nyt]{biblatex}
+\usepackage{graphicx} % For including figures
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{media9} % For embedding multimedia
+
+\addbibresource{references.bib} % Replace with your .bib file
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+ 
+    {\scshape\Large Title of the Thesis\par}
+    \vspace{1.5cm}
+    {\Large\itshape Samina Amin\par}
+    \vfill
+
+ \vspace{0.5cm}
+   \includegraphics[width=0.3\textwidth]{122.png}\par\vspace{1cm} % Adjust the width as needed
+    {\scshape\LARGE Your Institute Name \par}
+    {\large \today\par}
+   
+\end{titlepage}
+
+\begin{abstract}
+\lipsum[1] % Replace with your abstract
+\end{abstract}
+
+\chapter*{Acknowledgements}
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\lipsum[1] % Replace with your acknowledgements
+
+
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\chapter*{List of Abbreviations}
+\addcontentsline{toc}{chapter}{Abbreviations}
+\begin{tabbing}
+    \hspace{2cm} \= \kill
+    ABC \> Abbreviation One \\
+    DEF \> Abbreviation Two \\
+    GHI \> Abbreviation Three \\
+\end{tabbing}
+
+\chapter{Introduction}
+\section{Background}
+This is a citation \cite{smith2020}.
+\lipsum[1] % Replace with your text
+\section{Problem Statement}
+This is another citation \cite{doe2019}.
+\lipsum[1] % Replace with your text
+\section{Objectives}
+\lipsum[1] % Replace with your text
+\section{Significance of the Study}
+\lipsum[1] % Replace with your text
+\section{Thesis Structure}
+\lipsum[1] % Replace with your text
+
+\chapter{Literature Review}
+\section{Introduction to Literature Review}
+\lipsum[1] % Replace with your text
+\section{Review of Related Works}
+\lipsum[1] % Replace with your text
+\section{Summary of Findings}
+\lipsum[1] % Replace with your text
+\section{Gaps in the Literature}
+\lipsum[1] % Replace with your text
+
+\chapter{Methodology}
+\section{Research Design}
+\lipsum[1] % Replace with your text
+\section{Data Collection Methods}
+\lipsum[1] % Replace with your text
+\section{Data Analysis Techniques}
+\lipsum[1] % Replace with your text
+
+\chapter{Results}
+\section{Presentation of Data}
+\lipsum[1] % Replace with your text
+
+% Example of a table
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+Header 1 & Header 2 & Header 3 \\
+\hline
+Row 1, Col 1 & Row 1, Col 2 & Row 1, Col 3 \\
+Row 2, Col 1 & Row 2, Col 2 & Row 2, Col 3 \\
+\hline
+\end{tabular}
+\caption{Example Table}
+\label{tab:example}
+\end{table}
+
+\section{Analysis of Findings}
+\lipsum[1] % Replace with your text
+
+\chapter{Discussion}
+\section{Interpretation of Results}
+\lipsum[1] % Replace with your text
+
+
+% Example of a figure
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{122.png} % Replace with your figure file
+\caption{Example Figure}
+\label{fig:2}
+\end{figure}
+
+\section{Implications of Findings}
+\lipsum[1] % Replace with your text
+\section{Limitations of the Study}
+\lipsum[1] % Replace with your text
+\section{Recommendations for Future Research}
+\lipsum[1] % Replace with your text
+
+\chapter{Conclusion}
+\section{Summary of Key Findings}
+\lipsum[1] % Replace with your text
+\section{Contributions to the Field}
+\lipsum[1] % Replace with your text
+\section{Final Thoughts}
+\lipsum[1] % Replace with your text
+
+\printbibliography
+
+\end{document}
